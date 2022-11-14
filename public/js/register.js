@@ -23,8 +23,9 @@ function register(ev){
                 password: input_pass_register.value
             })
         }
-        fetch("http://localhost:3000/user/register", options).then(res=>{
+        fetch("/user/register", options).then(res=>{
            if(res.ok){
+                console.log(res)
                 setTimeout(telaRegistrando.success, 2000)
            }else{
                 res.json().then(error=>{
