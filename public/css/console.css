@@ -1,0 +1,359 @@
+body{
+    background-color: white;
+}
+header{
+    padding: 1rem 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+header a{
+    display: flex;
+    align-items: center;
+    align-items: center;
+    color: black;
+}
+header h1{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+}
+header h1 i {
+    transform: rotate(30deg);
+    margin-left: 5px;
+    font-size: 30px;
+    color: rgb(7, 52, 252);
+}
+header nav {
+    display: flex;
+    align-items: center;
+}
+.user_perfil_cont{
+    max-width: 400px;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(26, 27, 30);
+    padding-right: 1rem;
+    border-radius: 30px;
+    padding: 2px;
+    box-shadow: 3px 3px rgb(87, 87, 110);
+    cursor: default;
+    position: relative;
+}
+.list_menuPerfil{
+    position: absolute;
+    left: -10%;
+    top: 50px;
+    width: 120%;
+    background-color: rgb(26, 27, 30);
+    box-shadow: 3px 3px rgb(87, 87, 110);
+    overflow: hidden;
+    
+    border-radius: 10px;
+}.list_menuPerfil li{
+    color: white;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    padding: 10px;
+    transition: 0.2s;
+}
+.list_menuPerfil li:nth-child(1){margin-top: 0;}
+.list_menuPerfil li:hover{
+    background-color: rgb(90, 90, 246);
+    padding-left: rem;
+}
+.name_user{
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+}
+.user_perfil_cont i{
+    color: white;
+    margin-right: 1rem;
+    margin-left: 1.3rem;
+    cursor: pointer;
+}
+.image_user{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.image_user img{
+    transform: scale(1.4);
+    width: 100%;
+    height: auto;
+}
+.options_FotosPerfil{
+    left: -30%;
+    position: absolute;
+    top: 50px;
+    max-width: 500px;
+    background-color: rgb(26, 27, 30);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 6px;
+    border-radius: 10px;
+    box-shadow: 3px 3px rgba(85, 84, 84, 0.833);
+    z-index: 100;
+}
+.options_FotosPerfil img{
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}.options_FotosPerfil img:hover{
+    border: 2px solid rgb(204, 204, 6);
+}
+.container_console{
+    width: 100%;
+    max-height: 4000px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 4rem;
+}
+.contant_console{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.contant_console section{
+    margin-top: 3rem;
+    width: 100%;
+    max-height: 2000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.fichas_existence ul{
+    margin-top: 1rem;
+    width: 80%;
+}
+.fichas_existence li{
+    width: 100%;
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.055);
+    align-items: center;
+    justify-content: space-between;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 1rem;
+    height: 50px;
+    padding-right: 1rem;
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+    transition: 0.2s;
+
+}.fichas_existence li:hover{border: 1px solid black;}
+.img_perfil{
+    width: 50px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fichas_existence li img{ 
+    width: 100%;
+    height: auto;
+}
+.button_acessar{
+    padding: 3px 10px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(8, 112, 249);
+    color: white;
+    opacity: 0;
+    transition: 0.2s;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.fichas_existence li:hover .button_acessar{opacity: 1;}
+.fichas_create a{
+    text-decoration: none;
+    background-color: black;
+    text-transform: uppercase;
+    margin-left: 1rem;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 5px 1.5rem;
+    cursor: pointer;
+    box-shadow: 3px 3px rgb(87, 87, 110);
+    transition: 0.2s;
+}.fichas_create a:hover{
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+.fichas_create{
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+}
+.console_carregando{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.833);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 99;
+}
+.button_logout{
+    font-size: 30px;
+    margin-left: 3rem;
+    cursor: pointer;
+}
+.poop_logout{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    background-color: rgba(255, 255, 255, 0.351);
+    padding: 1rem;
+}
+.poop_logout_content{
+    max-width: 400px;
+    background-color: rgb(7, 52, 252);
+    color: white;
+    padding: 1.3rem;
+    border-radius: 5px;
+    box-shadow: 4px 4px rgb(121, 121, 245);
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    text-align: center;
+    justify-tracks: center;
+    align-items: center;
+}
+.poop_logout_content span{margin-top: 1rem;}
+.poop_logout_content button{
+    padding: 7px 1rem;
+    background-color: black;
+    color: white;
+    border: none;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+}.poop_logout_content button:hover{transform: scale(0.9);}
+.poop_logout_content p{letter-spacing: 2px;}
+
+.Page_contInput_alterarnome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.649);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+}
+.input_alterarnome{width: 500px;}
+.input_alterarnome p{
+    font-size: 1.7rem;
+    margin-bottom: 5px;
+}
+.input_alterarnome input{
+    font-size: 1.4rem;
+    width: 100%;
+    padding: 7px 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 3px 3px black;
+    transition: 0.2s;
+}
+.input_alterarnome input:focus{
+    outline: none;
+    box-shadow: none;
+    transform: translate(3px,3px);
+}
+.input_alterarnome button{
+    background-color: rgb(121, 121, 245);
+    padding: 5px 1rem;
+    font-size: 1.2rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 7px;
+    box-shadow: 2px 2px rgb(172, 172, 240);
+    transition: 0.2s;
+}
+.input_alterarnome button:nth-child(4){
+    background-color: rgb(227, 18, 18);
+    box-shadow: 2px 2px rgb(255, 133, 127);
+    margin-left: 10px;
+}
+.input_alterarnome button:hover{
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}
+/* TABLET */
+@media (max-width: 768px){
+    .image_user{
+        width: 35px;
+        height: 35px;
+    }
+    header h1{font-size: 1.3rem;}
+    header h1 i {font-size: 25px;}
+    header{
+        position: fixed;
+        top: 0;
+    }
+    .fichas_existence ul{width: 100%;}
+    .fichas_existence li{font-size: 0.8rem;}
+    .container_console{
+        padding: 1rem 2rem;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+    }
+    .button_acessar{font-size: 0.7rem;}
+    .fichas_create a{font-size: 0.8rem;}
+    .fichas_create h3, .fichas_existence h3{font-size: 1.2rem;}
+}
+
+/* PHONE */
+@media (max-width: 600px) {
+    .input_alterarnome{width: 100%;}
+    .name_user{font-size: 0.6rem;}
+    header h1{font-size: 1.2rem;}
+    .saudacao_user{font-size: 1.8rem;}
+    .container_console section{margin-top: 0.8rem;}
+    .fichas_create{margin-bottom: 5rem;}
+}
+@media (max-width: 400px){
+    .fichas_existence ul li span{display: none;}
+    header{flex-wrap: wrap;}
+    header nav{margin-top: 1rem; }
+     .button_acessar{opacity: 1;}
+}

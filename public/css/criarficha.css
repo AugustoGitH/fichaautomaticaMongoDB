@@ -1,0 +1,358 @@
+
+.inputs_criateName label{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-bottom: 1.4rem;
+    font-size: 1.1rem;
+
+    color: white;
+    text-transform: uppercase;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem 7rem 2rem;
+    background-color: white;
+}
+
+
+
+header{
+    padding: 1rem 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+header img{
+    width: 110px;
+}
+header a{
+    display: flex;
+    align-items: center;
+    align-items: center;
+    color: black;
+}
+header h1{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+}header h1 i {
+    transform: rotate(30deg);
+    margin-left: 5px;
+    font-size: 30px;
+    color: rgb(7, 52, 252);
+}
+.inputs_criateName label input{
+    margin-top: 7px;
+    padding: 5px 1rem;
+    font-size: 1.3rem;
+    border: none;
+    box-shadow: 3px 3px rgb(175, 174, 174);
+    transition: 0.2s;
+}
+.inputs_criateName label input:focus{
+    outline: none;
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+header img{
+    width: 110px;
+}
+.criar_ficha_criate{
+    width: 100%;
+    max-height: 2000px;
+    margin-top: 2rem;
+    
+}
+.content_criateFicha{
+    background-color: rgb(12, 8, 26);
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content_criateFicha button{
+    color: black;
+    background-color: rgb(255, 251, 0);
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    padding: 5px 1rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+.Continput_imgPerfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.image_amoster{
+    width: 150px;
+    margin-bottom: 10px;
+}
+.imgPerfil_container{
+    order: 1;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.imgPerfil_container img{
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+}
+.Label-input_image{
+    order: 2;
+    color: black;
+    background-color: rgb(255, 251, 0);
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    padding: 5px 1rem;
+    border-radius: 20px;
+    transition: 0.2s;
+    text-transform: uppercase;
+
+}.Label-input_image:hover{
+    transform: translate(-15px);
+
+}
+.input-image{
+    display: none;
+}
+.imageAm_perfil{
+    height: 200px;
+    width: auto;
+}
+
+
+
+.ficha_container{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin: 5rem 0;
+}
+.head_ficha {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(12, 8, 26);
+    color: white;
+    padding: 3rem 1rem;
+
+}
+.head_ficha h2{
+    color:rgb(255, 251, 0);
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.head_ficha ul{
+    margin-top: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 450px));
+    justify-content: space-around;
+    gap: 15px;
+    align-items: center;
+}
+.ficha_container label{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}.ficha_container label input, .label_textarea textarea{
+    width: 100%;
+    margin-left: 10px;
+    box-shadow: 3px 3px rgb(175, 174, 174);
+    border: none;
+    font-size: 1.3rem;
+    padding: 3px 10px;
+    transition: 0.2s;
+}.ficha_container label input:focus, .label_textarea textarea:focus{
+    outline: none;
+    transform: translate(3px, 3px);
+    box-shadow: none;
+}.ficha_container input::placeholder{
+    color: black
+}.label_textarea textarea{
+    width: 70%;
+    height: 100%;
+    padding: 10px;
+    font-size: 0.8rem;
+}.label_textarea{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+.button_enviarFichaDb{
+    padding: 5px 2rem;
+    font-size: 1.2rem;
+    background-color: blue;
+    box-shadow: 3px 3px rgba(64, 0, 255, 0.318);
+    color: white;
+    font-weight: bold;
+    border: none;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.button_enviarFichaDb:hover{
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+
+
+.telaBlur{
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+}
+.telaBlur_content{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.telaBlur img {
+    width: 130px;
+    margin-bottom: 3px;
+}.telaBlur h1{
+    font-size: 1.7rem;
+    text-transform: uppercase;
+}
+.alert img{
+    width: 400px;
+}
+.alert h1{
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.alert {
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    position: fixed;
+    padding: 2rem;
+    top: 0;
+}
+.alert a{
+    margin-top: 1rem;
+    background-color: rgb(245, 245, 53);
+    padding: 5px 2rem;
+    color: black;
+    font-weight: bold;
+    font-size: 1.4rem;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.85);
+    transition: 0.2s;
+}
+.alert a:hover{
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+.alert_content{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.retirairPadding{
+    padding: 0;
+}
+@media (max-width: 791px){
+    .content_criateFicha{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .Continput_imgPerfil{
+        order: 1;
+        margin-bottom: 2.4rem;
+    }
+    .inputs_criateName{
+        order: 2;
+    }
+}
+
+/* PHONE */
+@media (max-width: 600px) {
+    .alert h1{
+        font-size: 1.5rem;
+    }.alert a{
+        font-size: 1.2rem;
+    }.alert img{
+        width: 300px;
+    }
+    .inputs_criateName{
+        width: 100%;
+    }.inputs_criateName label{
+        width: 100%;
+    }
+    .head_ficha h2{
+        font-size: 1.4rem;
+    }.label_textarea{
+        flex-direction: column;
+        
+    }.label_textarea textarea{
+        width: 100%;
+        margin-left: 0;
+    }.label_textarea span{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+@media (max-width: 400px){
+    .alert h1{
+        font-size: 1.3rem;
+    }
+    .alert a{
+        font-size: 1.1rem;
+    }header h1{
+        font-size: 1.1rem;
+    }header img{
+        display: none;
+    }header{
+        padding: 5px;
+    }
+    body{
+        padding: 1rem;
+    }
+    .ficha_container label input{
+        font-size: 1rem;
+    }
+    .inputs_criateName label input{
+        font-size: 1rem;
+    }
+    .Continput_imgPerfil label{
+        font-size: 1rem;
+        text-align: center;
+    }
+}

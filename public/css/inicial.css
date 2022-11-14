@@ -1,0 +1,191 @@
+
+body{
+    background-image: url(/public/Assets/background.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.section_content{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(1px);
+}
+header{
+    width: 100%;
+    padding: 10px 0;
+}
+.header_content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header_content i{font-size: 2.5rem;}
+.header_content a{
+    margin: 0 0.4rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    background-color: black;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: 0.3s;
+}.header_content a:hover{
+    background-color: transparent;
+    color: black;
+}
+.home{
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    color: white;
+}
+.home_content h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    font-size: 3rem;
+    max-width: 90%;
+    font-weight: bold;
+    text-shadow: 1px 1px 20px rgba(0, 174, 255, 0.456);
+    margin-bottom: 1.2rem;
+}
+.home_content button, .home_content a{
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    padding: 5px 30px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgb(23, 23, 16);
+    cursor: default;
+    letter-spacing: 2px;
+    transition: 0.2s;
+}
+.home_content a{
+    text-decoration: none;
+    background-color: blue;
+    cursor: pointer;
+    box-shadow: 4px 4px rgb(127, 127, 241);
+}.home_content a:hover{
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+.alert_testSite{
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 120;
+    background-image: url(/public/Assets/tela_alertInit.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    padding: 1.5rem;
+}
+.alert_testSite h1{
+    background-color: black;
+    margin-bottom: 1rem;
+}
+.alert_testSite p{
+    font-size: 1.2rem;
+    background-color: black;
+    line-height: 30px;
+    text-align: center;
+}
+.alert_testSite p span{
+    color: yellow;
+}
+.alert_testSite button{
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    padding: 4px 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    border: none;
+    margin-left: 50%;
+}.alert_testSite button:hover{color: yellow;}
+
+
+
+/* PRELOAD */
+.tela_preload{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 130;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}.tela_preload img{width: 90px;}
+
+
+
+
+
+/* TABLET */
+@media (max-width: 768px){
+    .header_content i{font-size: 1.9rem;}
+    .header_content a{
+        font-size: 1rem;
+        padding: 6px
+    }
+    .home_content h1{
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+    .home_content button, .home_content a{
+        font-size: 1.2rem;
+    }
+}
+
+/* PHONE */
+@media (max-width: 600px) {
+    header{
+        position: fixed;
+    }
+    .alert_testSite p{
+        font-size: 1rem;
+    }
+    .home{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } .header_content i{font-size: 1.9rem;}
+    .header_content a{
+        font-size: 0.9rem;
+        padding: 4px;
+    }.header_content span{
+        font-size: 0.9rem;
+    }
+    .home_content h1{font-size: 2rem;}
+    .home_content button, .home_content a{
+        font-size: 0.9rem;
+    }.home_content a{
+        box-shadow: 3px 3px rgb(127, 127, 241);
+    }
+}

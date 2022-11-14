@@ -1,0 +1,23 @@
+<style>
+    .tela_preload{
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 130;
+        position: fixed;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }.tela_preload img{width: 90px;}
+</style>
+
+<div class="tela_preload"><img src="https://art.pixilart.com/8afb782c4601281.gif"></div>
+<% if(!infinite){ %> 
+    <script>
+        document.addEventListener("DOMContentLoaded", 
+        ()=> setTimeout(() => {document.querySelector(".tela_preload").remove()}, 3000))
+    </script>
+<% } %> 

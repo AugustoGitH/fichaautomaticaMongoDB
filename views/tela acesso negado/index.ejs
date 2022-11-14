@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("../modelsViews/configsCss.ejs") %>
+    <style>
+        body{
+            background-color: rgb(241, 238, 11);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        img{
+            width: 250px;
+            margin-bottom: 1rem;
+        }
+        p{
+            font-size: 1.9rem;
+            font-weight: bold;
+        }
+        span{
+            margin-top: 1rem;
+        }
+        a{
+            background-color: black;
+            padding: 0.5rem 1.3rem;
+            color: white;
+            text-transform: uppercase;
+            margin: 0 1rem;
+            border-radius: 20px;
+            box-shadow: 3px 3px rgb(71, 53, 53);
+        }
+    </style>
+</head>
+<body>
+    <img src="https://cdn.myportfolio.com/ad15d17d570b361e270cdd345e57268c/51742217-73d8-4984-8e4b-90a24ec5c55b_rw_600.gif?h=4db76980c60c5915c72fb512b015f2d2">
+    <p>Você não tem acesso <%= tela %></p>
+    <p>Faça seu registro ou login</p>
+    <span>
+        <a href="/registro">Se registrar</a>
+        <a href="/login">Fazer login</a>
+    </span>
+</body>
+</html>

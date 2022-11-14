@@ -1,0 +1,566 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem 7rem 2rem;
+    background-color: white;
+}
+
+
+
+header{
+    padding: 1rem 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+header img{
+    width: 110px;
+}
+header a{
+    display: flex;
+    align-items: center;
+    align-items: center;
+    color: black;
+}
+header h1{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+}header h1 i {
+    transform: rotate(30deg);
+    margin-left: 5px;
+    font-size: 30px;
+    color: rgb(7, 52, 252);
+}
+.ficha_container{
+    width: 90%;
+    max-height: 10000px;
+    margin-bottom: 200px;
+
+
+}
+.header_fichaInfos{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 3px 3px rgb(19, 19, 19);
+    color: white;
+    text-transform: uppercase;
+}
+
+
+.main_infosPessoais{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.img_mainInPes{
+    max-width: 300px;
+    max-height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 1rem;
+
+
+}.img_mainInPes img{
+    width: 100%;
+    height: auto;
+}
+.ficha_container h1{
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+}
+.ficha_container label{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    display: flex;
+    padding: 8px 1rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    margin-top: 5px;
+    position: relative;
+}
+.ficha_container label input{
+    width: 100%;
+    padding: 5px 1rem;
+    margin-left: 8px;
+    font-size: 1rem;
+    border-radius: 16px;
+    border: none;
+   box-shadow: 3px 3px rgb(169, 161, 161);
+   transition: 0.2s;
+}.ficha_container label input:disabled{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: white;
+}.ficha_container label input:focus{
+    outline: none;
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+.button_edit-Input{
+    z-index: 20;
+    background-color: yellow;
+    position: absolute;
+    right: -50px;
+    height: 100%;
+    width: 50px;
+    color: black;
+    font-size: 1.5rem;
+    border: none;
+    transform: scale(0.6);
+    opacity: 0;
+    transition: 0.2s;
+    cursor: pointer;
+}.button_edit-Input i{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+   
+.ficha_container label:hover .button_edit-Input{
+    transform: scale(1);
+    opacity: 1;
+}
+.bx-x, .bx-check{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.telaBlur{
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+}
+.telaBlur_content{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.telaBlur img {
+    width: 130px;
+    margin-bottom: 3px;
+}.telaBlur h1{
+    font-size: 1.7rem;
+    text-transform: uppercase;
+}
+.header_fichaInfos h1{
+    font-size: 1rem;
+    margin: 0 5px;
+    text-decoration: none;
+}
+.ul_inputs{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(250px, 40%));
+    justify-content: space-around;
+    align-items: center;
+    gap: 2px;
+}
+.sections_collection{
+    border-top: 2px solid black;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    
+}
+
+.textarea_labelEdit{
+    display: flex;
+    width: 100%;
+    height: 200px;
+}.textarea_labelEdit textarea{
+    width: 100%;
+    height: 86%;
+    color: black;
+    font-size: 0.8rem;
+    border-left: none;
+    box-shadow: 3px 3px rgb(166, 165, 173);
+    border-bottom: none;
+    border-top: none;
+    border-right: none;
+    margin-left: 3rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.textarea_labelEdit textarea:disabled{
+    color: white;
+    border-left: 2px solid white;
+    box-shadow: none;
+    
+    background-color: transparent;
+
+}.textarea_labelEdit button{
+    width: 60px;
+    height: 60px;
+    bottom: 0;
+    right: 0;
+}
+
+.poop_config{
+    position: sticky;
+    width: 100%;
+    top: 0px;
+    right: 20px;
+    background-color: transparent;
+    padding: 1rem;
+    background-color: white;
+    z-index: 99;
+}.poop_config ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.poop_config li:nth-child(2){
+    margin-left: 1rem;
+}.poop_config li{
+
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border: 2px solid white;
+    padding: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}.poop_config li:hover{
+    border: 2px solid black;
+    text-decoration: none;
+}
+.poop_logout{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 140;
+    background-color: rgba(255, 255, 255, 0.811);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.poop_logout_content{
+    max-width: 400px;
+    background-color: rgb(7, 52, 252);
+    color: white;
+    padding: 1.3rem;
+    border-radius: 5px;
+    box-shadow: 4px 4px rgb(121, 121, 245);
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    text-align: center;
+    justify-tracks: center;
+    align-items: center;
+}.poop_logout_content span{
+    margin-top: 1rem;
+}.poop_logout_content button{
+    padding: 7px 1rem;
+    background-color: black;
+    color: white;
+    border: none;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+}.poop_logout_content button:hover{
+    transform: scale(0.9);
+}.poop_logout_content p{
+    letter-spacing: 2px;
+}
+
+.campoDados{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.751);
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.iconDado{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 2.2rem;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 110;
+}.iconDado:hover{
+    transform: rotate(130deg);
+}
+.campoDados_content{
+    max-width: 800px;
+    max-height: 800px;
+    background-color: rgb(255, 250, 250);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 5px 5px rgb(222, 211, 211);
+    text-align: center;
+
+    
+}.campoDados_content h1{
+    text-decoration: overline;
+    color: black;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2px;
+    font-size: 1.5rem;
+    
+}
+.campoDados_content label{
+    width: 700px;
+    padding: 14px;
+    margin-top: 2rem;
+    background-color: black;
+    color: white;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+    position: relative;
+}.campoDados_content label input{
+    width: 60%;
+    font-size: 1.3rem;
+    padding: 1rem;
+    margin-left: 1rem;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 2px 2px rgb(193, 191, 191);
+}.campoDados_content label input:focus{
+    outline: none;
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}.campoDados_content button{
+    position: absolute;
+    right: 26px;
+    top: 0px;
+    bottom: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    background-color: transparent;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 4px 1.4rem;
+    cursor: pointer;
+    transition: 0.2s;
+}.campoDados_content button i{
+    font-size: 2rem;
+}
+.result_campo{
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    color: white;
+    background-color: black;
+    padding: 6px;
+    cursor: default;
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+}
+.campoDados_content ul{
+    margin-top: 2rem;
+    height: 200px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.campoDados_content ul li{
+    font-size: 1.2rem;
+    border: 2px solid black;
+    padding: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.inputSearch_container{
+    background-color: yellow;
+    box-shadow: 3px 3px rgb(117, 191, 19);
+    padding: 7px;
+    max-width: 400px;
+    height: 50px;
+    text-align: end;
+    position: fixed;
+    top: 180px;
+    left: -2px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 100;
+}.inputSearch_container i{
+    cursor: pointer;
+}
+.inputSearch_container label{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 7px;
+    transition: 0.2s;
+} .input_search{
+    width: 0;
+    opacity: 0;
+    height: 100%;
+    border: none;
+    transition: 0.2s;
+    font-size: 1.1rem;
+    background-color: yellow;
+    
+}
+.inputSearch_container:hover .input_search, .input_search:focus{
+    width: 200px;
+    opacity: 1;
+    margin-left: 1rem;
+}.input_search:focus .input_search::placeholder{
+    color: black;
+}
+.input_search:focus{
+    outline: none;
+}
+
+
+.label_select{
+    background-color: red;
+    color: black;
+}
+/* TABLET */
+@media (max-width: 800px){
+    .campoDados_content{
+        width: 100%;
+        height: 100%;
+    }
+    .campoDados_content label{
+        width: 100%;
+    } .campoDados_content h1{
+        text-decoration: underline;
+    }
+}
+@media (max-width: 773px){
+    .main_infosPessoais{
+        flex-wrap: wrap;
+        
+    }
+    .img_mainInPes{
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+    .textarea_labelEdit{
+        flex-direction: column;
+    }.textarea_labelEdit textarea{
+        width: 100%;
+        margin: 0;
+    }
+    body{
+        padding: 0 1rem;
+    }
+    .textarea_labelEdit span{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .campoDados_content label{
+        font-size: 1rem;
+    }
+    .result_campo{
+        font-size: 1.2rem;
+    }
+}
+
+/* PHONE */
+@media (max-width: 600px) {
+    .header_fichaInfos h1{
+        font-size: 0.8rem;
+    }.header_fichaInfos h1:nth-child(1){
+        margin-right: 5px;
+    }
+    header h1{
+        font-size: 1.1rem;
+    }.iconDado{
+        font-size: 1.7rem;
+    }.poop_config{
+        padding: 1rem 0;
+    }
+    .poop_configList li{
+        font-size: 0.9rem;
+    }.campoDados_content label button{
+        right: 10px;
+        top: 37px
+    }.campoDados_content label{
+        flex-direction: column;
+
+    }.campoDados_content label input{
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .ul_inputs{
+        display: flex;
+        flex-direction: column;
+    }
+    .section_infPesInputs{
+        width: 100%;
+    }
+    .inputs_infos input{
+        max-width: 50%;
+
+    }.ul_inputs input{
+        max-width: 30%;
+    }
+    .button_edit-Input{
+        right: 0;
+    }
+ 
+
+
+}
+@media (max-width: 400px){
+    header img{
+        display: none;
+    }.poop_configList li{
+        font-size: 0.8rem;
+    }
+}

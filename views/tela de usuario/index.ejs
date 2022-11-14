@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Console</title>
+    <%- include("../modelsViews/configsCss.ejs") %>
+    <link href="/public/css/console.css" rel="stylesheet">
+</head>
+<body>
+    <%- include("../modelsViews/telaPreload.ejs", {infinite: true}) %>
+    <header>
+        <a href=""><h1>Seu console<i class='bx bx-shape-square'></i></h1></a>
+        <nav>
+            <div class="user_perfil_cont"  onclick="openlist_perfil()">
+                <div class="image_user">
+                </div>
+                <p class="name_user"></p>
+                <i class='bx bxs-chevron-down'></i>
+            </div>
+        </nav>
+    </header>
+    <div class="container_console">
+        <div class="contant_console">
+            <h1>Olá <span class="saudacao_user"></span>!</h1>
+            <section>
+                <div class="fichas_create">
+                    <h3>CRIE SUA FICHA</h3>
+                    <a href="/criarSuaFicha">Criar</a>
+                </div>
+                <div class="fichas_existence">
+                    <h3>SUAS FICHAS:</h3>
+                    <ul class="ul_fichasPresents"></ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="/public/js/DBSecundary/urlsPerfil.js"></script>
+    <script src="/public/js/consoleFront/api_telaUser.js"></script>
+    <script defer src="/public/js/consoleFront/telaUser.js"></script>
+</body>
+</html>

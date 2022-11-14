@@ -1,0 +1,68 @@
+<style>
+    .popAlert{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        z-index: 99;
+        width: 460px;
+        padding: 2rem 1rem 1rem 1rem;
+        background-color: rgb(241, 241, 14);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 3px 3px rgb(141, 141, 9);
+    } .popAlert p{
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }.popAlert p i{
+        font-size: 2rem;
+        margin-right: 0.7rem;
+    }
+    .overflow{
+        overflow-y: hidden;
+    }.popAlert span{
+        width: 100%;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: end;
+    }
+    .popAlert button{
+        all: unset;
+        background-color: black;
+        color: white;
+        font-size: 1.1rem;
+        padding: 0.3rem 1rem;
+        font-weight: bold;
+
+    }
+</style>
+<script>
+    function openPop(msg){
+        document.body.classList.add("overflow")
+        if(!msg) return undefined
+        let refinedMsg = msg[0].toUpperCase() + msg.substring(1, msg.length)
+        document.body.innerHTML += `
+            <div class="popAlert">
+                <p><i class='bx bxs-edit-alt'></i>${refinedMsg}</p>
+                <span>
+                    <button onclick="backPop()">OK</button>
+                </span>
+                
+            </div>
+        
+        `
+    }
+    function backPop(){
+        document.body.classList.remove("overflow")
+        document.querySelector(".popAlert").remove()
+    }
+
+
+</script>

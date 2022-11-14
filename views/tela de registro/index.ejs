@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se registre!</title>
+    <%- include("../modelsViews/configsCss.ejs") %>
+    <link href="/public/css/registro-login.css" rel="stylesheet">
+ 
+
+</head>
+<body>
+    <%- include("../modelsViews/telaPreload.ejs", {infinite: false}) %> 
+    <section class="tela">
+        <div class="tela_content">
+            <span class="spanTitle">
+                <h1>Register</h1>
+                <i class="bx bx-street-view"></i>
+            </span>
+            <form>
+                <p>Nome:</p>
+                <span>
+                    <img src="/public/Assets/helmet.png">
+                    <input id="input_nome" type="text" required name="nome" placeholder="Digite seu nome ou apelido">
+                </span>
+                <p>Email:</p>
+                <span>
+                    <img src="/public/Assets/cavaleiro.png">
+                    <input id="input_email_register" type="email" required name="email" placeholder="Digite seu email">
+                </span>
+                <p>Senha:</p>
+                <span>
+                    <img src="/public/Assets/escudo.png">
+                    <input id="input_pass_register" type="password" required name="pass" placeholder="Digite sua senha" onfocus="focusInputPass(this)">
+                    <i onclick="pass_visible(this)" class="bx bxs-low-vision vision_pass"></i>
+                </span>
+                <input id="submit_form_register" class="submit_form" type="submit" value="Registrar">
+            </form>
+            <a href="/login" class="register_form">Já está registrado? Faça seu login</a>
+        </div>
+    </section>
+    <script src="/public/js/register-login.js"></script>
+    <script src="/public/js/register.js"></script>
+</body>
+</html>

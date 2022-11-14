@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja bem vindo!</title>
+
+    <link href="/public/css/inicial.css" rel="stylesheet">
+    <%- include("../modelsViews/configsCss.ejs") %> 
+</head>
+<body>
+    <%- include("../modelsViews/telaPreload.ejs", {infinite: false}) %> 
+    <div class="section_content">
+        <header>
+            <div class="header_content">
+                <i class="bx bxs-castle"></i>
+                <% if(logado){ %> 
+                    <span class="buttons_acess">
+                        <a id="acessRegister" href="/console">Acessar seu console</a> 
+                    </span>
+                <% }if(!logado){%> 
+                    <span class="buttons_acess">
+                        <a id="acessRegister" href="/registrar">Faça seu registro</a> ou 
+                        <a id="acessLogin" href="/login">Login</a>
+                    </span>
+                <% } %> 
+            </div>
+        </header>
+        <section class="home">
+            <div class="home_content">
+                <h1>Seja muito bem vindo aventureiro!</h1>
+                <button>Deseja automatizar a sua ficha RPG?</button>
+                <a class="button_boasvindas" href="/Login_register/register.html">Crie já sua conta e faça sua ficha!</a>
+            </div>
+        </section>
+    </div>
+    <script src="/public/js/inicial.js"></script>
+</body>
+</html>

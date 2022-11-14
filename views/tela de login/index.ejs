@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça seu login</title>
+
+    <%- include("../modelsViews/configsCss.ejs") %>
+    <link href="/public/css/registro-login.css" rel="stylesheet">
+</head>
+<body>
+    <%- include("../modelsViews/telaPreload.ejs", {infinite: false}) %> 
+    <section class="tela">
+        <div class="tela_content">
+            <span class="spanTitle">
+                <h1>Login</h1>
+                <i class="bx bx-street-view"></i>
+            </span>
+            <form>
+                <p>Email:</p>
+                <span>
+                    <img src="/public/Assets/cavaleiro.png">
+                    <input id="input_email_Login" type="email" required name="email" placeholder="Digite seu email">
+                </span>
+                <p>Senha:</p>
+                <span>
+                    <img src="/public/Assets/escudo.png">
+                    <input id="input_pass_login" type="password" required name="pass" placeholder="Digite sua senha" onfocus="focusInputPass(this)">
+                    <i class="bx bxs-low-vision vision_pass" onclick="pass_visible(this)"></i>
+                </span>
+                <input class="submit_form" id="submit_form_login" type="submit" value="Acessar">
+            </form>
+            <a href="/registrar" class="register_form">Se registre agora</a>
+        </div>
+    </section>
+
+    <script src="/public/js/register-login.js"></script>
+    <script src="/public/js/login.js"></script>
+</body>
+</html>
