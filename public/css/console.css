@@ -325,10 +325,6 @@ header nav {
     }
     header h1{font-size: 1.3rem;}
     header h1 i {font-size: 25px;}
-    header{
-        position: fixed;
-        top: 0;
-    }
     .fichas_existence ul{width: 100%;}
     .fichas_existence li{font-size: 0.8rem;}
     .container_console{
