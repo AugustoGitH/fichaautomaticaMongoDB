@@ -144,3 +144,17 @@ body{
 .gif_carregando::before{content: url(https://i.pinimg.com/originals/29/32/63/293263670b8780146ab0c4e40a2ea890.gif);}
 .gif_sucess::before{content: url(https://i.pinimg.com/originals/e8/b4/fb/e8b4fb1916228f06a9c5cd8074d0492b.gif);}
 .iconVision_visible{visibility: visible;}
+@media (max-width: 500px) {
+    .tela{
+        border: none;
+        box-shadow: none;
+        width: 100vw;
+        height: 100vh;
+    }
+    .tela form span{width: 100%;}
+    .register_form{
+        margin-right: 1rem;
+        font-size: 0.9rem;
+    }
+    
+}
