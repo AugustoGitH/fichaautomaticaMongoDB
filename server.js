@@ -18,6 +18,7 @@ mongoose.connect(process.env.MONGO_CONNECTION_URL,
 // Fazer uso arquivos estáticos
 app.use("/public", express.static("public"))
 app.use(cookieParser())
+
 // Routers Separadas
 app.use(bodyParser.json({limit: '99999mb', extended: true}))
 app.use(bodyParser.urlencoded({limit: '99999mb', extended: true}))
