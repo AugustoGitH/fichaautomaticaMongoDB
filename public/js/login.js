@@ -22,15 +22,15 @@ function login(ev){
         }
 
         fetch("/user/login", options).then(res=>{
-           if(res.ok){
-                console.log("Usuario salvo com sucesso!")
-                location.href = "/console"
-           }else{
-                res.json().then(error=>{
+            res.json().then(objRes=>{
+                if(res.ok){
+                    console.log("Usuario salvo com sucesso!")
+                    location.href = "/console"
+               }else{
                     telaLogando.encerrar()
-                    alert(error.message)
-                })
-           }
+                    alert(objRes.message)
+               }
+            })
         })
     }
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <%- include("../modelsViews/configsCss.ejs") %>
+    <%- include("./modelsViews/configsCss.ejs") %>
     <style>
         body{
             background-color: rgb(241, 238, 11);
@@ -14,6 +14,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            padding: 1rem;
         }
         img{
             width: 250px;
@@ -22,9 +23,14 @@
         p{
             font-size: 1.9rem;
             font-weight: bold;
+            text-align: center;
         }
         span{
             margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
         }
         a{
             background-color: black;
@@ -34,6 +40,19 @@
             margin: 0 1rem;
             border-radius: 20px;
             box-shadow: 3px 3px rgb(71, 53, 53);
+        }
+        @media (max-width: 524px) {
+            img{
+                width: 200px;
+            }
+            p{
+                font-size: 1.4rem;
+            }
+            a{
+                font-size: 1rem;
+                margin: 0.3rem;
+            }
+
         }
     </style>
 </head>

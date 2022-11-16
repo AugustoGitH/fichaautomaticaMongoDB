@@ -44,6 +44,7 @@ header nav {
     box-shadow: 3px 3px rgb(87, 87, 110);
     cursor: default;
     position: relative;
+    z-index: 10;
 }
 .list_menuPerfil{
     position: absolute;
@@ -141,11 +142,11 @@ header nav {
     flex-direction: column;
     justify-content: space-between;
 }
-.fichas_existence ul{
+.ul_fichasPresents{
     margin-top: 1rem;
     width: 80%;
 }
-.fichas_existence li{
+.ul_fichasPresents li{
     width: 100%;
     display: flex;
     border: 1px solid rgba(0, 0, 0, 0.055);
@@ -161,7 +162,7 @@ header nav {
     cursor: default;
     transition: 0.2s;
 
-}.fichas_existence li:hover{border: 1px solid black;}
+}.ul_fichasPresents li:hover{border: 1px solid black;}
 .img_perfil{
     width: 50px;
     height: 100%;
@@ -170,7 +171,7 @@ header nav {
     align-items: center;
     justify-content: center;
 }
-.fichas_existence li img{ 
+.ul_fichasPresents li img{ 
     width: 100%;
     height: auto;
 }
@@ -186,7 +187,7 @@ header nav {
     cursor: pointer;
     margin-left: 8px;
 }
-.fichas_existence li:hover .button_acessar{opacity: 1;}
+.ul_fichasPresents li:hover .button_acessar{opacity: 1;}
 .fichas_create a{
     text-decoration: none;
     background-color: black;
@@ -325,12 +326,11 @@ header nav {
     }
     header h1{font-size: 1.3rem;}
     header h1 i {font-size: 25px;}
-    .fichas_existence ul{width: 100%;}
-    .fichas_existence li{font-size: 0.8rem;}
+    .ul_fichasPresents{width: 100%;}
+    .ul_fichasPresents li{font-size: 0.8rem;}
     .container_console{
         padding: 1rem 2rem;
         width: 100vw;
-        height: 100vh;
         align-items: center;
     }
     .button_acessar{font-size: 0.7rem;}
@@ -348,7 +348,7 @@ header nav {
     .fichas_create{margin-bottom: 5rem;}
 }
 @media (max-width: 400px){
-    .fichas_existence ul li span{display: none;}
+    .ul_fichasPresents li span{display: none;}
     header{flex-wrap: wrap;}
     header nav{margin-top: 1rem; }
      .button_acessar{opacity: 1;}

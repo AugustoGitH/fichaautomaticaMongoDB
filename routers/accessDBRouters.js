@@ -7,6 +7,6 @@ router.get("/fichas", accessDBControllers.accessInfosFichas)
 router.get("/ficha/:id", accessDBControllers.accessFichaSelected)
 router.post("/alterar-ficha", accessDBControllers.alterarFichaDB)
 router.delete("/deletar-ficha", accessDBControllers.deleteFichaDB)
-
+router.get("/admin/jogador", accessDBControllers.accessInfosUserAdmin)
 
 module.exports = router

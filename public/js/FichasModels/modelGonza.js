@@ -162,16 +162,6 @@ const ficha_model__Gonza = [
             }
         ]
     },
-    // {
-    //     categoria: "Inventário",
-    //     valor_carteira: { estado: true },
-    //     loja: { estado: true },
-    //     pontos: {
-    //         estado: true,
-    //         quantidade_total: 15,
-    //         quantidade_pontuada: 0
-    //     },
-    // },
     {
         categoria: "História",
         pontos: {estado: false },

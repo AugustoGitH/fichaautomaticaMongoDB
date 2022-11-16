@@ -21,44 +21,10 @@ function visibleImage_perfil(url){
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    verifyLengthFichas(3)
-    .then(()=> appendFichaGonza(ficha_model__Gonza))
-    .catch(()=> appendAlertEdit("Sua conta só pode ter 3 ficha...", "/console"))
+    appendFichaGonza(ficha_model__Gonza)
 })
 
-function verifyLengthFichas(length){
-    return new Promise((resolve, reject)=>{
-        fetch("/DB/fichas").then(res=>{
-            res.json().then(fichas=> fichas.length < length ? resolve() : reject())
-        }).catch(err=> console.log(err))
-    })
-}
-function appendAlertEdit(msg, ender_return){
-    let header = document.querySelector("header")
-    header.remove()
-    document.body.classList.add("retirairPadding")
 
-    let section = document.createElement("section")
-    section.classList.add("alert")
-    document.body.appendChild(section)
-
-    let alert = document.createElement("div")
-    alert.classList.add("alert_content")
-    section.appendChild(alert)
-
-    let gif = document.createElement("img")
-    gif.src = "https://i.pinimg.com/originals/c3/5a/e1/c35ae18ff4ae31d8835a477140a7835e.gif"
-    alert.appendChild(gif)
-
-    let h1_msg = document.createElement("h1")
-    h1_msg.innerText = msg
-    alert.appendChild(h1_msg)
-
-    let button = document.createElement("a")
-    button.href = ender_return
-    button.innerText = "Voltar"
-    alert.appendChild(button)
-}
 
 function criar_infoFicha(){
     let criar_fichaCreate = document.createElement("section")

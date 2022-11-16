@@ -47,7 +47,7 @@ module.exports = {
             secure: true,
             httpOnly: true
         })
-        return res.status(200).send(true)
+        res.send(true)
     },
     logout: (req, res)=>{
         if(req.body.logout){
@@ -103,9 +103,8 @@ function verifyTokenHandlerUser(req, res, cb){
     catch(err){res.send({user: false, message: "Usuário não logado!"})}
 }
 function tratarError(error){
-    if(typeof error === "string"){
-        return {message: error}
-    }if(typeof error === "object"){
+    if(typeof error === "string") return {message: error}
+    if(typeof error === "object"){
         let typeError = error.details[0].path[0]
         if(typeError === "nome")return {message: "Seu nome deve conter pelo menos 3 caracteres!"}
         if(typeError === "email")return {message: "Formato de email não valido!"}
