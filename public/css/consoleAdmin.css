@@ -61,7 +61,7 @@
 .player_card span button{
     all: unset;
     background-color: white;
-    border-radius: 6px;
+    border-radius: 10px;
     color: black;
     padding: 0.2rem .6rem;
     font-size: .8rem;
@@ -94,13 +94,14 @@
 
 .popUp_fichasInfos{
     width: 100vw;
-    min-height: 100%;
+    min-height: 100vh;
     max-height: 3000px;
     position: fixed;
     top: 0;
     background-color: white;
     padding: 4rem 10%;
     transition: 0.3s;
+    z-index: 99;
 }
 .iconClose{
     position: absolute;
