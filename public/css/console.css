@@ -30,6 +30,8 @@ header h1 i {
 header nav {
     display: flex;
     align-items: center;
+    justify-content: center;
+
 }
 .user_perfil_cont{
     max-width: 400px;
@@ -69,6 +71,47 @@ header nav {
     background-color: rgb(90, 90, 246);
     padding-left: rem;
 }
+
+
+
+.alertsMessages{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: rgba(90, 88, 88, 0.33);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10%;
+    transition: 0.3s;
+}
+.popUp_message i{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+.popUp_message{
+    position: relative;
+    width: 100%;
+    background-color: yellow;
+    padding: 1rem 2rem;
+    box-shadow: 4px 4px rgb(154, 154, 8);
+    border-radius: 30px;
+    margin-bottom: 1rem;
+    transition: 0.3s;
+}.popUp_message p{
+    font-size: 1.2rem;
+}
+.popUp_message h3{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
 .name_user{
     color: white;
     font-weight: bold;
@@ -88,13 +131,14 @@ header nav {
     overflow: hidden;
     border-radius: 50%;
     margin-right: 10px;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 .image_user img{
-    transform: scale(1.4);
-    width: 100%;
-    height: auto;
+    transform: scale(1.2);
+    width: auto;
+    height: 100%;
 }
 .options_FotosPerfil{
     left: -30%;
@@ -111,12 +155,22 @@ header nav {
     box-shadow: 3px 3px rgba(85, 84, 84, 0.833);
     z-index: 100;
 }
-.options_FotosPerfil img{
+.squareImg_perfil{
     width: 100px;
+    height: 100px;
+    overflow: hidden;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.2s;
-}.options_FotosPerfil img:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.squareImg_perfil img{
+    transform: scale(1.1);
+    width: auto;
+    height: 100%;
+}.squareImg_perfil:hover{
     border: 2px solid rgb(204, 204, 6);
 }
 .container_console{

@@ -25,7 +25,6 @@ function register(ev){
         }
         fetch("/user/register", options).then(res=>{
            if(res.ok){
-                console.log(res)
                 setTimeout(telaRegistrando.success, 2000)
            }else{
                 res.json().then(error=>{

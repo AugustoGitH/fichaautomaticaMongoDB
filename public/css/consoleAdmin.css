@@ -89,7 +89,6 @@
     align-items: flex-start;
     justify-content:center;
     flex-direction: column;
-    overflow-y: scroll;
 }
 
 .popUp_fichasInfos{
@@ -108,6 +107,7 @@
     top: 10px;
     left: 10px;
     font-size: 2rem;
+    cursor: pointer;
 }
 .translateY{
     transform: translateY(-100%);
@@ -142,12 +142,18 @@
     all: unset;
     width: 70%;
     font-size: 1.3rem;
+    text-align: start;
     padding: 0.5rem 1rem;
     background-color: white;
     border-radius: 25px;
     box-shadow: 3px 3px rgb(209, 200, 200);
-    
-}.postMessage_label button{
+    transition: 0.2s;
+}
+.postMessage_label input:focus, .postMessage_label button:hover{
+    transform: translate(3px, 3px);
+    box-shadow: none;
+}
+.postMessage_label button{
     all: unset;
     background-color: black;
     border-radius: 25px;
@@ -156,6 +162,8 @@
     font-size: 1rem;
     padding: 0.7rem 2rem;
     box-shadow: 3px 3px rgb(115, 102, 102);
+    transform: 0.2s;
+    cursor: pointer;
 }
 .container_fichasPresents{
     margin-top: 2rem;
@@ -169,7 +177,7 @@
     .postMessage_label input{
         width: 100%;
         margin-bottom: 0.7rem;
-        padding: 0.9rem 0;
+        padding: 0.9rem 0 0.9rem 1rem;
     }.postMessage_label button{
         margin-left: 0;
     }

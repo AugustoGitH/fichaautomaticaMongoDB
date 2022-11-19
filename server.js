@@ -18,8 +18,6 @@ const PORT = process.env.PORT || 3000
 
 
 
-
-
 app.use("/public", express.static("public"))
 app.use(cookieParser())
 
@@ -30,8 +28,6 @@ app.use(bodyParser.urlencoded({limit: '99999mb', extended: true}))
 app.use("/user", userRouter)
 app.use("/DB", accessDBRouters)
 app.use("/admin-game", adminRouter)
-
-
 
 
 // app.set("views", path.join(__dirname, "views"))

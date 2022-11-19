@@ -74,3 +74,19 @@ function openFichaSelect(fichaID){
     localStorage.setItem("IdFicha", fichaID)
     location.href = "/suaFicha"
 }
+function deletePopUpALert(index, popup){
+    let options = {
+        method: "DELETE",
+        headers: new Headers({"content-type": "application/json"}),
+        body: JSON.stringify({indexMessage: index})
+    }
+    fetch("/admin-game/api/delete-message", options).then(()=>{
+        console.log("Mensagem deletada com sucesso!")
+        popup.parentNode.style.opacity = 0
+        setTimeout(()=> popup.parentNode.remove(), 200)
+
+        let quantityPop = document.querySelectorAll(".popUp_message").length
+
+        if(quantityPop === 1) popup.parentNode.parentNode.remove()
+    })
+}

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     verifyUser().then(user=>{
         addInfosUser(user)
         carregarFichasDB()
+        verifyAlerts(user.messageHeader)
         setTimeout(()=> document.querySelector(".tela_preload").remove(), 2000)
     }).catch(err=>{
         console.log(err)
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 function addInfosUser(user){
     let inputsNome = {
         nomeHeader: document.querySelector(".name_user"),
-        nomeSaudation: document.querySelector(".saudacao_user")
+        nomeSaudation: document.querySelector(".saudacao_user"),
     }
     let inputImage = {
         imageHeader: document.querySelector(".image_user")
@@ -24,10 +25,33 @@ function addInfosUser(user){
 }
 let infosMethods = {
     addName(inputs, user){ for(const key in inputs) inputs[key].innerHTML = user.nome },
-    addImage(inputs, user){ for(const key in inputs) inputs[key].innerHTML = `<img src="${user.imagePerfil}">`}
+    addImage(inputs, user){ for(const key in inputs) inputs[key].innerHTML = `<img src="${user.imagePerfil}">`},
 }
 
-
+function verifyAlerts(messageHeader){
+    if(messageHeader.length === 0) return 
+    let returnMessages = ()=>{
+        let resultsHTML = ""
+        messageHeader.forEach((message, index)=>{
+            resultsHTML += `
+            <div class="popUp_message">
+                <h3>[ ${index + 1} ] Alerta do administrador ${message.admin}</h3>
+                <p>--> ${message.message[0].toUpperCase() + message.message.substring(1, message.message.length)}</p>
+                <p>Envido: ${message.data}</p>
+                <i onclick="deletePopUpALert('${index}', this)" class='bx bx-x'></i>
+            </div>
+            `
+        })
+        return resultsHTML
+    }
+    let estruturaHTML  = `
+    <div class="alertsMessages">
+        ${returnMessages()}
+    </div>
+    `
+    document.body.innerHTML += estruturaHTML
+    
+}
 
 
 
@@ -103,7 +127,7 @@ function openlist_perfil(){
 function criarMap_optionsPerfil(collection){
     let gerarImgs = ()=>{
         let result = ""
-        collection.forEach(img => result += `<img onclick="salvarImg_PerfilDb(this)" src="${img.url}">`)
+        collection.forEach(img => result += `<div class="squareImg_perfil"><img onclick="salvarImg_PerfilDb(this)" src="${img.url}"></div>`)
         return result
     }
     let estruturaHTML = `

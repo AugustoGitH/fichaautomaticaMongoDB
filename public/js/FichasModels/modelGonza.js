@@ -4,192 +4,124 @@ const inf_FichaGonza = {
 }
 
 
+class CamposChaves {
+    constructor({chave_string, atributosInput, textarea}){
+        return {
+            chave_string,
+            atributosInput,
+            textarea,
+        }
+    }
+}
 
+
+class ModelsChaves {
+    constructor({categoria, pontos, att_global, chaves}){
+        return {
+            categoria,
+            pontos: !pontos ? {estado: false} : pontos,
+            att_global: !att_global ? "" : att_global,
+            chaves,
+
+        }
+    }
+}
 const ficha_model__Gonza = [
-    {
+    new ModelsChaves({
         categoria: "Informações Pessoais",
-        pontos: { estado: false },
         chaves: [
-            { 
-                chave_string: "nome" ,
-                atributosInput: ''
-            },
-            { 
-                chave_string: "Classe",
-                atributosInput: ''
-            },
-            {
-                chave_string: "Nível",
-                atributosInput: 'type="number"'
-            },
-             { 
-                chave_string: "Jogador",
-                atributosInput: ''
-            },
-            { 
-                chave_string: "Vinculo",
-                atributosInput: ''
-             },
-            { 
-                chave_string: "Raça",
-                atributosInput: ''
-            }, 
-            { 
-                chave_string: "Nação" ,
-                atributosInput: ''
-            },
+            new CamposChaves({chave_string: "Nome"}),
+            new CamposChaves({chave_string: "Classe"}),
+            new CamposChaves({chave_string: "Nível", atributosInput: 'type="number"'}),
+            new CamposChaves({chave_string: "Jogador"}),
+            new CamposChaves({chave_string: "Vinculo"}),
+            new CamposChaves({chave_string: "Raça"}),
+            new CamposChaves({chave_string: "Nação"}),
         ]
-    },
-    {
-        categoria: "Atributos",
+    }),
+    new ModelsChaves({
+        categoria: "Atributos", 
         pontos: {
             estado: true,
             quantidade_total: 5,
             quantidade_pontuada: 0
         },
-        type_global: "number",
+        att_global: "type='number' max='5'",
         chaves: [
-            { 
-                chave_string: "Força",
-             },
-            { 
-                chave_string: "Resistencia",
-             },
-            { 
-                chave_string: "Inteligência",
-             },
-            { 
-                chave_string: "Agilidade",
-             },
-            { 
-                chave_string: "Poder",
-             },
-            { 
-                chave_string: "Carisma",
-             }
+            new CamposChaves({chave_string: "Força"}),
+            new CamposChaves({chave_string: "Resistencia"}),
+            new CamposChaves({chave_string: "Inteligência"}),
+            new CamposChaves({chave_string: "Agilidade"}),
+            new CamposChaves({chave_string: "Poder"}),
+            new CamposChaves({chave_string: "Carisma"}),
         ]
-    },
-    {
+    }),
+    new ModelsChaves({
         categoria: "Informações Basicas",
         pontos: { estado: false },
         chaves: [
-            {
-                chave_string: "PV",
-                atributosInput:'placeholder="x/xx"'
-            },
-            {
-                chave_string: "Mana",
-                atributosInput:'placeholder="x/x"'
-            },
-            {
-                chave_string: "Sanidade",
-                atributosInput:'placeholder="x/xx"'
-            },
-            {
-                chave_string: "Movimento",
-                atributosInput:'placeholder="xx ft"'
-            },
-            { 
-                chave_string: "Defesa",
-                atributosInput:''
-            },
-            { 
-                chave_string: "Origem",
-                atributosInput:''
-            },
+            new CamposChaves({chave_string: "PV", atributosInput:'placeholder="x/xx"'}),
+            new CamposChaves({chave_string: "Mana", atributosInput:'placeholder="x/x"'}),
+            new CamposChaves({chave_string: "Sanidade", atributosInput:'placeholder="x/xx"'}),
+            new CamposChaves({chave_string: "Movimento", atributosInput:'placeholder="xx ft"'}),
+            new CamposChaves({chave_string: "Defesa"}),
+            new CamposChaves({chave_string: "Origem"}),
         ]
-    },
-    {
+    }),
+    new ModelsChaves({
         categoria: "Armaduras",
         pontos: {estado: false },
-        chaves: [
-            {
-                chave_string: "Armaduras",
-                textarea: true
-            }
-        ]
-    },
-    {
+        chaves: [new CamposChaves({chave_string: "Armaduras", textarea: true})]
+    }),
+    new ModelsChaves({
         categoria: "Perícias",
-        pontos: {estado: false },
-        type_global: "number",
+        att_global: "type='number'",
         chaves: [
-            { chave_string: "Acrobacias" },
-            { chave_string: "Adestramento" },
-            { chave_string: "Alquimia" },
-            { chave_string: "Armas_leves" },
-            { chave_string: "Armas_pesadas" },
-            { chave_string: "Artes" },
-            { chave_string: "Atletismo" },
-            { chave_string: "Briga" },
-            { chave_string: "Charme" },
-            { chave_string: "Diplomacia" },
-            { chave_string: "Fortitude" },
-            { chave_string: "Furtividade" },
-            { chave_string: "Iniciativa" },
-            { chave_string: "Intimidação" },
-            { chave_string: "Labia" },
-            { chave_string: "Medicina" },
-            { chave_string: "Percepção" },
-            { chave_string: "Pesquisa" },
-            { chave_string: "Psicologia" },
-            { chave_string: "Presdigitação" },
-            { chave_string: "Pontaria" },
-            { chave_string: "Reflexo" },
-            { chave_string: "Religião" },
-            { chave_string: "Sobrevivência" },
-            { chave_string: "Vontade" },
+            new CamposChaves({chave_string: "Acrobacias"}),
+            new CamposChaves({chave_string: "Adestramento"}),
+            new CamposChaves({chave_string: "Alquimia"}),
+            new CamposChaves({chave_string: "Armas_leves"}),
+            new CamposChaves({chave_string: "Armas_pesadas"}),
+            new CamposChaves({chave_string: "Artes"}),
+            new CamposChaves({chave_string: "Atletismo"}),
+            new CamposChaves({chave_string: "Briga"}),
+            new CamposChaves({chave_string: "Charme"}),
+            new CamposChaves({chave_string: "Diplomacia"}),
+            new CamposChaves({chave_string: "Fortitude"}),
+            new CamposChaves({chave_string: "Furtividade"}),
+            new CamposChaves({chave_string: "Iniciativa"}),
+            new CamposChaves({chave_string: "Intimidação"}),
+            new CamposChaves({chave_string: "Labia"}),
+            new CamposChaves({chave_string: "Medicina"}),
+            new CamposChaves({chave_string: "Percepção"}),
+            new CamposChaves({chave_string: "Pesquisa"}),
+            new CamposChaves({chave_string: "Psicologia"}),
+            new CamposChaves({chave_string: "Presdigitação"}),
+            new CamposChaves({chave_string: "Pontaria"}),
+            new CamposChaves({chave_string: "Reflexo"}),
+            new CamposChaves({chave_string: "Religião"}),
+            new CamposChaves({chave_string: "Sobrevivência"}),
+            new CamposChaves({chave_string: "Vontade"}),
         ]
-    },
-    {
+    }),
+    new ModelsChaves({
         categoria: "Habilidades",
-        pontos: {estado: false },
-        chaves: [
-            {
-                chave_string: "Habilidades",
-                textarea: true
-            }
-        ]
-
-    },
-    {
+        chaves: [new CamposChaves({chave_string: "Habilidades", textarea: true}),]
+    }),
+    new ModelsChaves({
         categoria: "Magias",
-        pontos: {estado: false },
-        chaves: [
-            {
-                chave_string: "Magias",
-                textarea: true
-            }
-        ]
-    },
-    {
+        chaves: [new CamposChaves({chave_string: "Magias", textarea: true}),]
+    }),
+    new ModelsChaves({
         categoria: "História",
-        pontos: {estado: false },
-        chaves: [
-            {
-                chave_string: "História",
-                textarea: true
-            }
-        ]
-    },
-    {
+        chaves: [new CamposChaves({chave_string: "História", textarea: true}),]
+    }),
+    new ModelsChaves({
         categoria: "Aparência",
-        pontos: {estado: false },
-        chaves: [
-            {
-                chave_string: "Aparência",
-                textarea: true
-            }
-        ]
-    },
-    {
+        chaves: [new CamposChaves({chave_string: "Aparência", textarea: true}),]
+    }),
+    new ModelsChaves({
         categoria: "Personalidade",
-        pontos: {estado: false },
-        chaves: [
-            {
-                chave_string: "Personalidade",
-                textarea: true
-            }
-        ]
-    }
+        chaves: [new CamposChaves({chave_string: "Aparência", textarea: true}),]
+    })
 ]

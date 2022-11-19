@@ -1,34 +1,16 @@
-const jwt = require("jsonwebtoken")
 const User = require("../mongooseModels/User")
-
+const verifyTokenHandlerUser = require("./function_verifyToken")
 module.exports = {
     accessInfosUser: async(req, res)=>{
         verifyTokenHandlerUser(req, res, async (userVerified)=>{
-            const {nome, email, imagePerfil, admin} = await User.findOne({_id: userVerified.id})
-            res.status(200).send({nome, email, imagePerfil, admin})
+            const {nome, email, imagePerfil, messageHeader} = await User.findOne({_id: userVerified.id})
+            res.status(200).send({nome, email, imagePerfil, messageHeader})
         })
     },
     accessInfosFichas: async(req, res)=>{
         verifyTokenHandlerUser(req, res, async (userVerified)=>{
             let user = await User.findOne({_id: userVerified.id})
             res.status(200).send(user.fichas)
-        })
-    },
-    accessInfosUserAdmin: async(req, res)=>{
-        verifyTokenHandlerUser(req, res, async (userVerified)=>{
-            if(userVerified.admin){
-                let users = await User.find({})
-                let userAtual = users.filter(user => {
-                    return user._id.toString() === userVerified.id
-                })
-                users.splice(users.indexOf(userAtual[0]), 1)
-                let usersMapeados = users.map(user=> {
-                    return {nome: user.nome, email: user.email, imagePerfil: user.imagePerfil, fichas: user.fichas, data: user.createAd }
-                })
-                res.status(200).send(usersMapeados)
-            }else{
-                res.status(401).send({message: "Acesso a api negado!"})
-            }
         })
     },
     accessFichaSelected: async(req, res)=>{
@@ -95,13 +77,4 @@ module.exports = {
         })
     },
 
-}
-function verifyTokenHandlerUser(req, res, cb){
-    const token = req.cookies.authorizationToken
-    if(!token) return res.status(401).render("tela acesso negado", {tela: "ao Console"})
-    try{
-        const userVerified = jwt.verify(token, process.env.TOKEN_SECRET)
-        cb(userVerified)
-    }
-    catch(err){res.send({user: false, message: "Usuário não logado!"})}
 }

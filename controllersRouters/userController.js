@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const {loginValidate, registerValidate}  = require("../controllersRouters/validateForm")
 const { default: mongoose } = require("mongoose")
+const verifyTokenHandlerUser = require("./function_verifyToken")
 
 module.exports = {
     register: (req, res)=>{
@@ -45,7 +46,7 @@ module.exports = {
         const tokenJWT = jwt.sign({id: selectedUser._id, admin: selectedUser.admin}, process.env.TOKEN_SECRET)
         res.cookie("authorizationToken", tokenJWT, {
             secure: true,
-            httpOnly: true
+            httpOnly: true,
         })
         res.send(true)
     },
@@ -89,19 +90,9 @@ module.exports = {
                 res.status(500).end()
             })
         })
-
     }
 }
 
-function verifyTokenHandlerUser(req, res, cb){
-    const token = req.cookies.authorizationToken
-    if(!token) return res.status(401).render("tela acesso negado", {tela: "ao Console"})
-    try{
-        const userVerified = jwt.verify(token, process.env.TOKEN_SECRET)
-        cb(userVerified)
-    }
-    catch(err){res.send({user: false, message: "Usuário não logado!"})}
-}
 function tratarError(error){
     if(typeof error === "string") return {message: error}
     if(typeof error === "object"){

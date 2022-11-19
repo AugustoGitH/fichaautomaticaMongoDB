@@ -64,7 +64,7 @@ function observerFichas(email){
                     <p>Envie um alerta em forma de mensagem para o seu jogador! <br> O alerta ficará no cabeçalho do console do jogador.</p>
                     <div class="postMessage_label">
                         <input type="text" placeholder="Mensagem de alerta!">
-                        <button>Enviar</button>
+                        <button onclick="submitMessageAlert(this, '${user.email}')">Enviar</button>
                     </div>
                 </section>
                 <section class="container_fichasPresents">

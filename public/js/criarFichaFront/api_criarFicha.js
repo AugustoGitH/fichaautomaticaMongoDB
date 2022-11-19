@@ -14,13 +14,14 @@ function enviar_dadosFichaDb(){
     const textAreas_infos = document.querySelectorAll(".textarea_values")
 
     const nome_fichaInput = document.querySelector("#nome_ficha")
-    const input_imgFicha = document.querySelector(".input-image")
+    // const input_imgFicha = document.querySelector(".input-image")
     const img_ficha = document.querySelector(".imageAm_perfil")
     
     let geralInputs = [...inputs_infosFicha, ...textAreas_infos]
+
     let inputsVazios = 0
     geralInputs.forEach(input => !input.value ? inputsVazios++ : false )
-    if(inputsVazios === 0 && input_imgFicha.value && nome_fichaInput.value ){
+    if(inputsVazios === 0 && nome_fichaInput.value && img_ficha.src){
         tela_carregamento(true)
        
         let ficha_valores = []
