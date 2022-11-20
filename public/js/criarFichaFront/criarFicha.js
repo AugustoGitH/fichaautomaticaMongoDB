@@ -87,7 +87,10 @@ function appendFichaGonza(ficha_infos){
     let inputsText_global = document.querySelectorAll("input")
 
     inputsNumber_global.forEach(input => input.value = 0)
-    inputsText_global.forEach(input => input.autocomplete = "off")
+    inputsText_global.forEach(input => {
+        input.autocomplete = "off"
+        input.maxLength = "40"
+    })
 
     configsInputsNumber(".inputs_atributos", ".inputs_pericias")
 }
@@ -130,8 +133,9 @@ function createFichaEdit_window(info, container){
         let class_inputs = "inputs_" + info.categoria.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '_').toLowerCase()
         if(chave.textarea){
             head_fichaCont.innerHTML += `<label class="label_textarea">
-                                            <span>${chave.chave_string}:</span>
-                                            <textarea class="textarea_values ${class_inputs}" id="${chave.chave_string}" name="${info.categoria}"></textarea>
+                                            <div class="textarea_cont">
+                                                <textarea oninput="countCaracteresTextarea(this)" class="textarea_values ${class_inputs}" id="${chave.chave_string}" name="${info.categoria}"></textarea><span class="count_caracteres">0/1000</span>
+                                            </div>
                                         </label>`
         }else{
             ul_inputs.innerHTML += `<label>
@@ -142,6 +146,17 @@ function createFichaEdit_window(info, container){
         
     })
 
+}
+function countCaracteresTextarea(textarea){
+    let countDisplay = textarea.parentNode.querySelector(".count_caracteres")
+    let maxLength = 800
+    let length = textarea.value.length
+    if(length > maxLength){
+        countDisplay.style.color = "red"
+        textarea.value = textarea.value.substring(0, maxLength)
+    }else{
+        countDisplay.innerHTML = `${length}/${maxLength}`
+    }
 }
 
 
