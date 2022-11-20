@@ -134,7 +134,7 @@ function createFichaEdit_window(info, container){
         if(chave.textarea){
             head_fichaCont.innerHTML += `<label class="label_textarea">
                                             <div class="textarea_cont">
-                                                <textarea oninput="countCaracteresTextarea(this)" class="textarea_values ${class_inputs}" id="${chave.chave_string}" name="${info.categoria}"></textarea><span class="count_caracteres">0/1000</span>
+                                                <textarea oninput="countCaracteresTextarea(this)" class="textarea_values ${class_inputs}" id="${chave.chave_string}" name="${info.categoria}"></textarea><span class="count_caracteres">0/800</span>
                                             </div>
                                         </label>`
         }else{
