@@ -248,11 +248,11 @@ header img{
     padding: 0;
 }
 @media (max-width: 791px){
-    .content_criateFicha{
+    .content_createFicha{
         flex-wrap: wrap;
         justify-content: center;
     }
-    .Continput_imgPerfil{
+    .content_input-imgPerfil{
         order: 1;
         margin-bottom: 2.4rem;
     }
@@ -310,7 +310,7 @@ header img{
     .inputs_createName label input{
         font-size: 1rem;
     }
-    .Continput_imgPerfil label{
+    .content_input-imgPerfil label{
         font-size: 1rem;
         text-align: center;
     }
