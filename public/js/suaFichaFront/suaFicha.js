@@ -136,7 +136,9 @@ function criarSections_categoria(categoriaInfo, container, ficha){
 function appendInputs(categoria, listLabel){
     if(categoria.length === 1){
         let class_selectChave = categoria[0].chave.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
-        listLabel.innerHTML += `<label class="textarea_labelEdit"> <span id="${class_selectChave}" class="chave_ficha" >${categoria[0].chave}:</span>  <textarea disabled></textarea><button class='button_edit-Input'><i class='bx bxs-pencil'></i></button></label>`
+        listLabel.innerHTML += `<label class="textarea_labelEdit">
+        
+                                 <textarea disabled></textarea><button class='button_edit-Input'><i class='bx bxs-pencil'></i></button></label>`
         listLabel.querySelector("textarea").value = categoria[0].valor
     }else{
         categoria.forEach(inf=>{

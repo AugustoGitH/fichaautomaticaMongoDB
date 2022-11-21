@@ -181,6 +181,25 @@ header nav {
     justify-content: center;
     padding: 2rem 4rem;
 }
+.block_fichaClear{
+    width: 300px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+.block_fichaClear img{
+    width: 100%;
+    height: auto;
+}
+.block_fichaClear p{
+    position: absolute;
+    bottom: 6px;
+    color: white;
+    width: 100%;
+    padding: 0 0.5rem;
+    font-weight: bold;
+}
 .contant_console{
     width: 100%;
     display: flex;
@@ -199,6 +218,7 @@ header nav {
 .ul_fichasPresents{
     margin-top: 1rem;
     width: 80%;
+    margin-bottom: 2rem;
 }
 .ul_fichasPresents li{
     width: 100%;

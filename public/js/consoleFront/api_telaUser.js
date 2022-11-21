@@ -52,6 +52,14 @@ function carregarFichasDB(){
     let ul_fichasPresents = document.querySelector(".ul_fichasPresents")
     fetch("/DB/fichas").then(res=>{
         res.json().then(fichas=>{
+            if(fichas.length === 0) {
+                ul_fichasPresents.innerHTML = `
+                    <div class="block_fichaClear">
+                        <img src="https://i.pinimg.com/originals/41/60/61/416061b9d95e206d7bbeb51e644cca6e.gif">
+                        <p>Você não possui nenhuma ficha. Crie a sua agora mesmo viajante!</p>
+                    </div>
+                `
+            }
             fichas.forEach(ficha => {
                 ul_fichasPresents.innerHTML += `
                 <li>

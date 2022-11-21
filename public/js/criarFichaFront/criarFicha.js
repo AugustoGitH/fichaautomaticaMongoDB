@@ -84,7 +84,7 @@ function appendFichaGonza(ficha_infos){
 
     //Definindo que todos os inputs numéricos receberão valor 0
     let inputsNumber_global = document.querySelectorAll("input[type='number']")
-    let inputsText_global = document.querySelectorAll("input")
+    let inputsText_global = document.querySelectorAll("input[type='text]")
 
     inputsNumber_global.forEach(input => input.value = 0)
     inputsText_global.forEach(input => {

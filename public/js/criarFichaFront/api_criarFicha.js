@@ -14,14 +14,20 @@ function enviar_dadosFichaDb(){
     const textAreas_infos = document.querySelectorAll(".textarea_values")
 
     const nome_fichaInput = document.querySelector("#nome_ficha")
-    // const input_imgFicha = document.querySelector(".input-image")
+    const input_imgFicha = document.querySelector(".input-image")
     const img_ficha = document.querySelector(".imageAm_perfil")
     
     let geralInputs = [...inputs_infosFicha, ...textAreas_infos]
+    let urlImageInput = img_ficha ? true : input_imgFicha
 
-    let inputsVazios = 0
-    geralInputs.forEach(input => !input.value ? inputsVazios++ : false )
-    if(inputsVazios === 0 && nome_fichaInput.value && img_ficha.src){
+    let arrayInputsClear = geralInputs.filter(input=>{
+        return input.value === "" || input.value.length < 1
+    })
+    if(urlImageInput !== true) arrayInputsClear.push(urlImageInput)
+
+
+
+    if(arrayInputsClear.length === 0){
         tela_carregamento(true)
        
         let ficha_valores = []
@@ -53,9 +59,19 @@ function enviar_dadosFichaDb(){
             location.href = "/console"
         })
     }
-    else alert("Você deixou algum campo vazio...")
-   
+    else verifyInputClear(arrayInputsClear)
 }
+
+function verifyInputClear(arrayInVazios){
+    arrayInVazios.forEach(input=>{
+        input.classList.add("input_vazio")
+        setTimeout(()=>{input.classList.remove("input_vazio")}, 2000)
+    })
+    let firstInputPos = arrayInVazios[0].getBoundingClientRect()
+    console.log(firstInputPos)
+}
+
+
 function tela_carregamento(bool){
     let telaBlur = document.createElement("div")
     telaBlur.classList.add("telaBlur")
