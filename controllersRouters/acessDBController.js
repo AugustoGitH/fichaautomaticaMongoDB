@@ -50,9 +50,7 @@ module.exports = {
 
         verifyTokenHandlerUser(req, res, async(userVerified)=>{
             let user = await User.findOne({_id: userVerified.id})
-            let fichaSelect = user.fichas.filter(ficha=> {
-                return ficha.infosFicha.id_ficha === idFicha
-            })
+            let fichaSelect = user.fichas.filter(ficha=> ficha.infosFicha.id_ficha === idFicha )
 
             let positionFicha = user.fichas.indexOf(fichaSelect[0])
             user.fichas.splice(positionFicha, 1)

@@ -21,16 +21,18 @@ module.exports = {
     },
     submitMessageUser: async(req, res)=>{
         verifyTokenHandlerUser(req, res, async (userVerified)=>{
-            let user = await User.findOne({_id: userVerified.id})
+            let admin = await User.findOne({_id: userVerified.id})
+            let userSelected = await User.findOne({email: req.body.email_player})
             let message = {
-                admin: user.nome,
+                admin: admin.nome,
                 message: req.body.message,
                 data: new Date().toLocaleDateString()
 
             }
-            if(user.messageHeader.length > 3) return res.send({limite: true})
+            if(userSelected.messageHeader.length > 3) return res.send({limite: true})
             User.updateOne({email: req.body.email_player}, {$push: {messageHeader: message}})
             .then(stats=> {
+                console.log(userSelected.messageHeader)
                 res.status(200).send({limite: false})
             })
             .catch(err=>{

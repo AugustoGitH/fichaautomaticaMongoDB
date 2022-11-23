@@ -9,6 +9,7 @@
     color: white;
     text-transform: uppercase;
 }
+
 body{
     display: flex;
     flex-direction: column;
@@ -195,7 +196,7 @@ header img{
     resize: none;
 }
 .input_vazio{
-    background-color: red;
+    background-color: rgb(159, 156, 156);
     box-shadow: none;
 }
 .textarea_cont{

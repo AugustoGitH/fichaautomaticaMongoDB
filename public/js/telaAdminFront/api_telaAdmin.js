@@ -21,10 +21,14 @@ function submitMessageAlert(submit, email){
     }
     fetch("/admin-game/api/message-player", options).then(res=>{
         res.json().then(status=>{
-            if(status.limite)  return console.log(status)
             input.value = ""
-            input.placeholder = "Mensagem enviado com sucesso!"
-            setTimeout(()=> input.placeholder = "Mensagem de alerta!", 2000)
+            if(status.limite){
+                input.placeholder = "Mensagem não foi enviada!"
+                setTimeout(()=> input.placeholder = "Mensagem de alerta!", 3000)
+            }else{
+                input.placeholder = "Mensagem enviado com sucesso!"
+                setTimeout(()=> input.placeholder = "Mensagem de alerta!", 3000)
+            }
        })
         
     })

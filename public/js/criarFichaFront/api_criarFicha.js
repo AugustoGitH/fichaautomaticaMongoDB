@@ -63,12 +63,17 @@ function enviar_dadosFichaDb(){
 }
 
 function verifyInputClear(arrayInVazios){
-    arrayInVazios.forEach(input=>{
-        input.classList.add("input_vazio")
-        setTimeout(()=>{input.classList.remove("input_vazio")}, 2000)
+
+    let position_element = arrayInVazios[0].getBoundingClientRect().top - 300
+    let position_atual = window.scrollY
+    
+    window.scroll({
+        top: position_element + position_atual,
+        behavior: "smooth"
     })
-    let firstInputPos = arrayInVazios[0].getBoundingClientRect()
-    console.log(firstInputPos)
+    arrayInVazios[0].classList.add("input_vazio")
+    setTimeout(()=>{arrayInVazios[0].classList.remove("input_vazio")}, 2000)
+
 }
 
 

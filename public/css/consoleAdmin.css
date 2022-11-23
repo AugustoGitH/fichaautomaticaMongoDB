@@ -149,10 +149,6 @@
     box-shadow: 3px 3px rgb(209, 200, 200);
     transition: 0.2s;
 }
-.postMessage_label input:focus, .postMessage_label button:hover{
-    transform: translate(3px, 3px);
-    box-shadow: none;
-}
 .postMessage_label button{
     all: unset;
     background-color: black;
@@ -164,7 +160,13 @@
     box-shadow: 3px 3px rgb(115, 102, 102);
     transform: 0.2s;
     cursor: pointer;
+    transition: 0.2s;
 }
+.postMessage_label input:focus, .postMessage_label button:hover{
+    transform: translate(3px, 3px);
+    box-shadow: none;
+}
+
 .container_fichasPresents{
     margin-top: 2rem;
     width: 100%;
