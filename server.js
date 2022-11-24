@@ -47,8 +47,8 @@ const viewsRender = {
     renderTelaFichaSelected: (req, res)=> res.render("telaFicha")
 }
 app.get("/", viewsRender.renderInicial)
-app.get("/registrar", viewsRender.renderRegister)
-app.get("/login", viewsRender.renderLogin)
+app.get("/registrar", auth.redirectConsole, viewsRender.renderRegister)
+app.get("/login", auth.redirectConsole, viewsRender.renderLogin)
 app.get("/console", auth.authUser, auth.redirectConsoleAdmin, viewsRender.renderConsole)
 app.get("/criarSuaFicha", auth.authUser, accessDBController.verifyQuantityFichas, viewsRender.renderTelaCriarFicha)
 app.get("/suaFicha", auth.authUser, viewsRender.renderTelaFichaSelected)

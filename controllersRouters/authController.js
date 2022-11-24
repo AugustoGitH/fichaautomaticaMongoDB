@@ -17,5 +17,14 @@ module.exports = {
             if(userVerified.admin) return res.redirect("/admin-game/console")
             else return next()
         })
+    },
+    redirectConsole(req, res, next){
+        const token = req.cookies.authorizationToken
+        if(!token) return next()
+        verifyTokenHandlerUser(req, res, userVerified=>{
+            if(userVerified.admin) return res.redirect("/admin-game/console")
+            if(userVerified) return res.redirect("/console")
+            else return next()
+        })
     }
 }
